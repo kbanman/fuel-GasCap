@@ -9,7 +9,9 @@
  */
 
 Autoloader::add_classes(array(
-	'Auth_Login_SimpleAuth' => __DIR__.'/drivers/auth/login/gascap.php',
+	'Auth_Login_GasCap' => __DIR__.'/drivers/auth/login/gascap.php',
+	'LightOpenID' => PKGPATH.'gascap'.DS.'vendor'.DS.'lightopenid'.DS.'openid.php',
+	'OAuthSimple' => PKGPATH.'gascap'.DS.'vendor'.DS.'oauthsimple'.DS.'php'.DS.'OAuthSimple.php',
 ));
 
 

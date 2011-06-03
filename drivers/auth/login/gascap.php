@@ -8,9 +8,6 @@
  * @link       http://kellybanman.com
  */
 
-require_once PKGPATH.'gascap'.DS.'vendor'.DS.'lightopenid'.DS.'openid.php';
-require_once PKGPATH.'gascap'.DS.'vendor'.DS.'oauthsimple'.DS.'OAuthSimple.php';
-
 class Auth_Login_GasCap extends \Auth_Login_Driver {
 
 	protected static $table_name;
@@ -75,7 +72,7 @@ class Auth_Login_GasCap extends \Auth_Login_Driver {
 		// Validate email/identifier combo, just to be sure
 		// (even though this is potentially public info)
 		$this->user = \DB::select()
-			->where('identifier', '=', $identity)
+			->where('identity', '=', $identity)
 			->from(static::$table_name)
 			->execute();
 		if ($this->user->count() === 0)
