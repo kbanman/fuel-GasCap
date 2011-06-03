@@ -3,7 +3,7 @@ Because this repo contains submodules, clone it using
 
 To install, merge the app and packages directories from this repo with those in your `fuel` directory.
 
-Then, in `app/config/auth.php`, set the `driver` parameter to be `openid`.
+Then, in `app/config/auth.php`, set the `driver` parameter to be `gascap`.
 
 Use the following SQL to create the necessary table:
 
