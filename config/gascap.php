@@ -16,10 +16,7 @@ return array(
 		'banned' => false,
 		'user' => array(
 			'comments' => array('create', 'read'),
-			'test' => array(
-				'#' => array('read'),
-				'protected' => array('create', 'delete'),
-			)
+			'test' => array('create', 'delete'),
 		),
 		'moderator' => array(
 			'comments' => array('update', 'delete')
@@ -28,21 +25,17 @@ return array(
 			'#' => array('delete'),
 			'website' => array('create', 'update', 'delete'),
 			'admin' => array('create', 'read', 'update', 'delete'),
-			'test' => array(
-				'index' => array('create'),
-			),
+			'test' => array('create'),
 		),
 		'super' => true,
 	),
 
-	'table_name' => 'users_openid',
+	'table_name' => 'users_gascap',
 
 	/**
 	 * Salt for the login hash
 	 */
 	'login_hash_salt' => 'put_some_salt_in_here',
-
-	'return_url' => 'http://1stgroup.ca/authtest/auth/',
 
 	/**
 	 * Attribute Exchange

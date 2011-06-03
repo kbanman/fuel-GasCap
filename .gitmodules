@@ -1,6 +1,6 @@
-[submodule "app/vendor/lightopenid"]
-	path = app/vendor/lightopenid
+[submodule "vendor/lightopenid"]
+	path = vendor/lightopenid
 	url = git://github.com/kbanman/lightopenid.git
-[submodule "app/vendor/oauthsimple"]
-	path = app/vendor/oauthsimple
+[submodule "vendor/oauthsimple"]
+	path = vendor/oauthsimple
 	url = git://github.com/jrconlin/oauthsimple.git

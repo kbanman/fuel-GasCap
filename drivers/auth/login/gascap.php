@@ -1,19 +1,15 @@
 <?php
 /**
- * Fuel is a fast, lightweight, community driven PHP5 framework.
- *
- * @package    Fuel
- * @version    1.0
- * @author     Fuel Development Team
+ * @package    GasCap
+ * @version    0.1
+ * @author     Kelly Banman
  * @license    MIT License
- * @copyright  2010 - 2011 Fuel Development Team
- * @link       http://fuelphp.com
+ * @copyright  2011 Kelly Banman
+ * @link       http://kellybanman.com
  */
 
-namespace Auth;
-
-require_once APPPATH.'vendor/lightopenid/openid.php';
-require_once APPPATH.'vendor/oauthsimple/OAuthSimple.php';
+require_once PKGPATH.'gascap'.DS.'vendor'.DS.'lightopenid'.DS.'openid.php';
+require_once PKGPATH.'gascap'.DS.'vendor'.DS.'oauthsimple'.DS.'OAuthSimple.php';
 
 class Auth_Login_GasCap extends \Auth_Login_Driver {
 
@@ -139,9 +135,9 @@ class Auth_Login_GasCap extends \Auth_Login_Driver {
 	 * @param	string    provider's unique key
 	 * @return	bool
 	 */
-	public function activate_user($activation, $email, $identifier, $oauth_token = null, $oauth_secret = null)
+	public function activate_user($activation, $email, $identity, $oauth_token = null, $oauth_secret = null)
 	{
-		if (empty($activation) or empty($email) or empty($identifier))
+		if (empty($activation) or empty($email) or empty($identity))
 		{
 			return false;
 		}
@@ -163,7 +159,7 @@ class Auth_Login_GasCap extends \Auth_Login_Driver {
 			'login_hash' => null,
 			'last_login' => null,
 			'updated_at' => \Date::factory()->get_timestamp(),
-			'identifier' => $identifier,
+			'identity' => $identity,
 		);
 
 		// OAuth support
@@ -421,4 +417,4 @@ class Auth_Login_GasCap extends \Auth_Login_Driver {
 	}
 }
 
-// end of file openid.php
+// end of file gascap.php
