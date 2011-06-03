@@ -1,9 +1,15 @@
 Because this repo contains submodules, clone it using  
 `git clone --recursive git://github.com/kbanman/GasCap.git`
 
-To install, use Fuel's Oil utility: ``
+or install using Fuel's Oil utility: `php oil package install gascap`
 
-Then, in `app/config/auth.php`, set the `driver` parameter to be `gascap`.
+Then in `app/config/config.php`, add `gascap` to the auto-loaded packages list:  
+	'packages'	=> array(
+		'auth',
+		'gascap',
+	),
+
+And finally in `app/config/auth.php`, set the `driver` parameter to be `GasCap`.
 
 Use the following SQL to create the necessary table:
 
@@ -23,6 +29,7 @@ Use the following SQL to create the necessary table:
 	  KEY `identity` (`identity`)
 	) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+Has only been tested with Google as the provider, but should work for any OpenID 2.0 provider.
 The example code is currently modelled so that users must be "invited" to create an account;  
 An activation code is generated and attached to a group, and the user can activate that account with any supported OpenID identity.  
 
