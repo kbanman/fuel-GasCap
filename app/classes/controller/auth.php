@@ -1,6 +1,21 @@
 <?php
 
 class Controller_Auth extends Controller {
+
+	public function action_index()
+	{
+		// Check if authenticated, try to authenticate if not
+		if (Auth::instance()->perform_check())
+		{
+			$email = Auth::instance()->get_email();
+			echo 'logged in as '.$email. ' <a href="'.Uri::create('auth/logout').'">Logout</a>';
+		}
+		else
+		{
+			echo 'Not logged in. <a href="'.Uri::create('auth/login').'">Login</a>';
+		}
+
+	}
 	
 	public function action_login()
 	{
@@ -25,19 +40,11 @@ class Controller_Auth extends Controller {
 
 	}
 
-	public function action_index()
+	public function action_logout()
 	{
-		// Check if authenticated, try to authenticate if not
-		if (Auth::instance()->perform_check())
-		{
-			$email = Auth::instance()->get_email();
-			echo 'logged in as '.$email;
-		}
-		else
-		{
-			echo 'Not logged in.';
-		}
-
+		$auth = Auth::instance();
+		$auth->logout();
+		Response::redirect('auth');
 	}
 
 	public function action_openid_reset()
