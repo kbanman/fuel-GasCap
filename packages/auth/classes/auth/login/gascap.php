@@ -15,7 +15,7 @@ namespace Auth;
 require_once APPPATH.'vendor/lightopenid/openid.php';
 require_once APPPATH.'vendor/oauthsimple/OAuthSimple.php';
 
-class Auth_Login_OpenID extends \Auth_Login_Driver {
+class Auth_Login_GasCap extends \Auth_Login_Driver {
 
 	protected static $table_name;
 
@@ -32,7 +32,7 @@ class Auth_Login_OpenID extends \Auth_Login_Driver {
 	protected $user = null;
 
 	/**
-	 * @var  array  OpenID class config
+	 * @var  array  GasCap class config
 	 */
 	protected $config = array(
 		'drivers' => array('group' => array('SimpleGroup')),
