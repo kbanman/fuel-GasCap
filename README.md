@@ -1,5 +1,5 @@
 Because this repo contains submodules, clone it using  
-`git clone --recursive git://github.com/kbanman/GasCap.git`
+`git clone --recursive git://github.com/kbanman/fuel-GasCap.git`
 
 or install using Fuel's Oil utility: `php oil package install gascap`
 
