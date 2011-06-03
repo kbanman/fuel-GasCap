@@ -1,3 +1,6 @@
+Because this repo contains submodules, clone it using  
+`git clone --recursive git://github.com/kbanman/GasCap.git`
+
 To install, merge the app and packages directories from this repo with those in your `fuel` directory.
 
 Then, in `app/config/auth.php`, set the `driver` parameter to be `openid`.
